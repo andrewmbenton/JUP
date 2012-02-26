@@ -115,7 +115,7 @@ vows.describe('jup.js').addBatch({
             ["br", { "class": "tall" }]
           ]
          );
-        if( result == '<div>a div</div><div>another div</div><div class="normal">div with attributes</div><div><div>a nested div</div></div><div>some content <a href="#">with a link</a></div><span>test #1 </span><span>test #2 </span><span>test #3 </span><span>test #4 </span><span>test #5 </span><span>test #6 </span><span>test #7 </span><span>test #8 </span><span>test #9 </span><span>test #10 </span><br class="tall"></br>'){
+        if( result == '<div>a div</div><div>another div</div><div class="normal">div with attributes</div><div><div>a nested div</div></div><div>some content <a href="#">with a link</a></div><span>test #1 </span><span>test #2 </span><span>test #3 </span><span>test #4 </span><span>test #5 </span><span>test #6 </span><span>test #7 </span><span>test #8 </span><span>test #9 </span><span>test #10 </span><br class="tall"/>'){
           assert.ok( true );
         }
         else{
