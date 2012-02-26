@@ -20,8 +20,26 @@ vows.describe('jup.js').addBatch({
       }
   },
   "JUP.html()": {
+    "Bad Inputs": {
+      topic: jup,
+      "returns the empty string when undefined is passed": function(topic) {
+        if (topic.html(undefined) === "") {
+          assert.ok(true);
+        } else {
+          assert.ok(false, topic + " should be the empty string");
+        }
+      },
+      topic: jup,
+      "returns the empty string when null is passed": function(topic) {
+        if (topic.html(null) === "") {
+          assert.ok(true);
+        } else {
+          assert.ok(false, topic + " should be the empty string");
+        }
+      }
+    },
     "Simple Tags": {
-       topic: jup,
+      topic: jup,
       "creates a tag when presented with it's string representation":function( topic ){
         if( topic.html(["p"]) == "<p></p>"){
           assert.ok( true );
