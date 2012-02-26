@@ -67,7 +67,7 @@ vows.describe('jup.js').addBatch({
           assert.ok( false, topic + " is not the correct tag");
         }
       },
-      "creates a tag with a class":function( topic ){
+      "creates a tag with an attribute":function( topic ){
         result = topic.html(["p", {'class': 'klass'}, 'text']);
         if( result == '<p class="klass">text</p>'){
           assert.ok( true );
@@ -76,7 +76,16 @@ vows.describe('jup.js').addBatch({
           assert.ok( false, result + " is not the correct tag");
         }
       },
-      "creates a tag with a data attribute":function( topic ){
+      "creates a self-closing tag with an attribute":function( topic ){
+        result = topic.html(["img", {'class': 'klass'}]);
+        if( result == '<img class="klass"/>'){
+          assert.ok( true );
+        }
+        else{
+          assert.ok( false, result + " is not the correct tag");
+        }
+      },
+      "creates a tag with a hyphenated attribute name":function( topic ){
         result = topic.html(["p", {'data-poster': 'poster'}, 'text']);
         if( result == '<p data-poster="poster">text</p>'){
           assert.ok( true );
